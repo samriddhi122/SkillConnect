@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkillConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>SkillConnect</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#categories" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="index.html#find-tutors" class="nav-link">Find Tutors</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link active">Login/Register</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login/Register Section -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome to SkillConnect</h1>
+                <p>Join our community of learners and teachers</p>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto;">
+                <!-- Tab Navigation -->
+                <div style="display: flex; background: #f8f9fa; border-radius: 15px; padding: 5px; margin-bottom: 30px;">
+                    <button id="loginTab" class="tab-btn active" onclick="switchTab('login')" style="flex: 1; background: white; border: none; padding: 15px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Login
+                    </button>
+                    <button id="registerTab" class="tab-btn" onclick="switchTab('register')" style="flex: 1; background: transparent; border: none; padding: 15px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Register
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form">
+                    <div class="form-container">
+                        <form>
+                            <div class="form-group">
+                                <label for="loginEmail" class="form-label">Email Address</label>
+                                <input type="email" id="loginEmail" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" id="loginPassword" class="form-input" required>
+                            </div>
+                            <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                                <label style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox"> Remember me
+                                </label>
+                                <a href="#" style="color: #FF6B9D; text-decoration: none; font-size: 0.9rem;">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="form-btn">Login</button>
+                        </form>
+                        
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="color: #666; margin-bottom: 20px;">Or continue with</div>
+                            <div style="display: flex; gap: 15px; justify-content: center;">
+                                <button style="flex: 1; background: #4285f4; color: white; border: none; padding: 12px; border-radius: 15px; font-weight: 500; cursor: pointer;">
+                                    <i class="fab fa-google"></i> Google
+                                </button>
+                                <button style="flex: 1; background: #1877f2; color: white; border: none; padding: 12px; border-radius: 15px; font-weight: 500; cursor: pointer;">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Form -->
+                <div id="registerForm" class="auth-form" style="display: none;">
+                    <div class="form-container">
+                        <!-- User Type Selection -->
+                        <div class="form-group">
+                            <label class="form-label">I want to:</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <label class="user-type-card">
+                                    <input type="radio" name="userType" value="student" checked style="display: none;">
+                                    <div class="type-content">
+                                        <i class="fas fa-user-graduate"></i>
+                                        <h4>Learn Skills</h4>
+                                        <p>Find and book tutors</p>
+                                    </div>
+                                </label>
+                                <label class="user-type-card">
+                                    <input type="radio" name="userType" value="tutor" style="display: none;">
+                                    <div class="type-content">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                        <h4>Teach Skills</h4>
+                                        <p>Share your expertise</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                <label for="registerName" class="form-label">Full Name</label>
+                                <input type="text" id="registerName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail" class="form-label">Email Address</label>
+                                <input type="email" id="registerEmail" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPhone" class="form-label">Phone Number</label>
+                                <input type="tel" id="registerPhone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" id="registerPassword" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" id="confirmPassword" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" required> I agree to the Terms of Service and Privacy Policy
+                                </label>
+                            </div>
+                            <button type="submit" class="form-btn">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>SkillConnect</span>
+                </div>
+                <p>&copy; 2025 SkillConnect. Connecting communities through skills.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function switchTab(tab) {
+            const loginTab = document.getElementById('loginTab');
+            const registerTab = document.getElementById('registerTab');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                registerTab.classList.add('active');
+                loginTab.classList.remove('active');
+                registerForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            }
+        }
+
+        // Handle form submissions
+        document.querySelector('#loginForm form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate login
+            setTimeout(() => {
+                showNotification('Login successful! Redirecting...', 'success');
+                // Redirect based on user type (you would get this from your backend)
+                setTimeout(() => {
+                    window.location.href = 'student-dashboard.html';
+                }, 1500);
+            }, 1000);
+        });
+
+        document.querySelector('#registerForm form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            
+            // Simulate registration
+            setTimeout(() => {
+                showNotification('Registration successful! Please check your email for verification.', 'success');
+                
+                // Redirect based on user type
+                setTimeout(() => {
+                    if (userType === 'tutor') {
+                        window.location.href = 'tutor-registration.html';
+                    } else {
+                        window.location.href = 'student-dashboard.html';
+                    }
+                }, 1500);
+            }, 1000);
+        });
+
+        // User type selection
+        document.querySelectorAll('input[name="userType"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.user-type-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                this.closest('.user-type-card').classList.add('selected');
+            });
+        });
+    </script>
+
+    <style>
+        .tab-btn.active {
+            background: white !important;
+            color: #FF6B9D !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .user-type-card {
+            border: 2px solid #E8E8E8;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .user-type-card:hover {
+            border-color: #FF6B9D;
+            background: rgba(255, 107, 157, 0.05);
+        }
+
+        .user-type-card.selected {
+            border-color: #FF6B9D;
+            background: rgba(255, 107, 157, 0.1);
+        }
+
+        .type-content i {
+            font-size: 2rem;
+            color: #FF6B9D;
+            margin-bottom: 10px;
+        }
+
+        .type-content h4 {
+            color: #4A4A4A;
+            margin-bottom: 5px;
+        }
+
+        .type-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Initialize first card as selected */
+        .user-type-card:first-child {
+            border-color: #FF6B9D;
+            background: rgba(255, 107, 157, 0.1);
+        }
+    </style>
+</body>
+</html>

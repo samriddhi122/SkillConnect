@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - SkillConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>SkillConnect</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#categories" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="index.html#find-tutors" class="nav-link">Find Tutors</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login/Register</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome back, Anjali!</h1>
+                <p>Track your learning journey and manage your bookings</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- My Bookings -->
+                <div class="dashboard-card" style="grid-column: span 2;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h2 class="card-title">My Bookings</h2>
+                    </div>
+                    
+                    <div class="bookings-list">
+                        <!-- Upcoming Booking -->
+                        <div class="booking-item" style="background: #f8f9ff; border-left: 4px solid #FF6B9D; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                                <div>
+                                    <h4 style="color: #4A4A4A; margin-bottom: 5px;">Traditional Indian Cooking</h4>
+                                    <p style="color: #666; margin: 0;">with Priya Sharma</p>
+                                </div>
+                                <span style="background: #FF6B9D; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">Confirmed</span>
+                            </div>
+                            <div style="display: flex; gap: 20px; color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                <span><i class="fas fa-calendar"></i> Jan 25, 2025</span>
+                                <span><i class="fas fa-clock"></i> 10:00 AM - 12:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button style="background: #25D366; color: white; border: none; padding: 8px 16px; border-radius: 15px; font-size: 0.9rem; cursor: pointer;">
+                                    <i class="fab fa-whatsapp"></i> Contact Tutor
+                                </button>
+                                <button style="background: #ff4757; color: white; border: none; padding: 8px 16px; border-radius: 15px; font-size: 0.9rem; cursor: pointer;">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Completed Booking -->
+                        <div class="booking-item" style="background: #f0f9f0; border-left: 4px solid #25D366; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                                <div>
+                                    <h4 style="color: #4A4A4A; margin-bottom: 5px;">Mehendi Basics</h4>
+                                    <p style="color: #666; margin: 0;">with Anjali Patel</p>
+                                </div>
+                                <span style="background: #25D366; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">Completed</span>
+                            </div>
+                            <div style="display: flex; gap: 20px; color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                <span><i class="fas fa-calendar"></i> Jan 20, 2025</span>
+                                <span><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button onclick="openFeedbackModal('anjali-patel')" style="background: #FFB347; color: white; border: none; padding: 8px 16px; border-radius: 15px; font-size: 0.9rem; cursor: pointer;">
+                                    <i class="fas fa-star"></i> Give Feedback
+                                </button>
+                                <button style="background: #FF6B9D; color: white; border: none; padding: 8px 16px; border-radius: 15px; font-size: 0.9rem; cursor: pointer;">
+                                    <i class="fas fa-redo"></i> Book Again
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pending Booking -->
+                        <div class="booking-item" style="background: #fff8e1; border-left: 4px solid #FFB347; padding: 20px; border-radius: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                                <div>
+                                    <h4 style="color: #4A4A4A; margin-bottom: 5px;">Soft Skills Workshop</h4>
+                                    <p style="color: #666; margin: 0;">with Meera Gupta</p>
+                                </div>
+                                <span style="background: #FFB347; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">Pending</span>
+                            </div>
+                            <div style="display: flex; gap: 20px; color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                <span><i class="fas fa-calendar"></i> Jan 28, 2025</span>
+                                <span><i class="fas fa-clock"></i> 4:00 PM - 6:00 PM</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Bangalore</span>
+                            </div>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Waiting for tutor confirmation...</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button style="background: #25D366; color: white; border: none; padding: 8px 16px; border-radius: 15px; font-size: 0.9rem; cursor: pointer;">
+                                    <i class="fab fa-whatsapp"></i> Follow Up
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2 class="card-title">Learning Stats</h2>
+                    </div>
+                    <div class="stats-content">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #FF6B9D;">12</div>
+                            <div style="color: #666;">Sessions Completed</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                            <span style="color: #666;">Skills Learned:</span>
+                            <span style="font-weight: 600; color: #4A4A4A;">5</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                            <span style="color: #666;">Hours Learned:</span>
+                            <span style="font-weight: 600; color: #4A4A4A;">24</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #666;">Favorite Category:</span>
+                            <span style="font-weight: 600; color: #4A4A4A;">Cooking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorite Tutors -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2 class="card-title">Favorite Tutors</h2>
+                    </div>
+                    <div class="favorite-tutors">
+                        <div style="display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid #f0f0f0;">
+                            <img src="https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=60" alt="Priya Sharma" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #4A4A4A; font-size: 0.9rem;">Priya Sharma</div>
+                                <div style="color: #666; font-size: 0.8rem;">Cooking • 3 sessions</div>
+                            </div>
+                            <button style="background: #FF6B9D; color: white; border: none; padding: 6px 12px; border-radius: 12px; font-size: 0.8rem; cursor: pointer;">Book</button>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 15px; padding: 15px 0;">
+                            <img src="https://images.pexels.com/photos/3768146/pexels-photo-3768146.jpeg?auto=compress&cs=tinysrgb&w=60" alt="Anjali Patel" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #4A4A4A; font-size: 0.9rem;">Anjali Patel</div>
+                                <div style="color: #666; font-size: 0.8rem;">Mehendi • 2 sessions</div>
+                            </div>
+                            <button style="background: #FF6B9D; color: white; border: none; padding: 6px 12px; border-radius: 12px; font-size: 0.8rem; cursor: pointer;">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h2 class="card-title">Recent Activity</h2>
+                    </div>
+                    <div class="activity-list">
+                        <div style="padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                            <div style="font-weight: 500; color: #4A4A4A; font-size: 0.9rem;">Session completed with Priya</div>
+                            <div style="color: #666; font-size: 0.8rem;">2 days ago</div>
+                        </div>
+                        <div style="padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                            <div style="font-weight: 500; color: #4A4A4A; font-size: 0.9rem;">Left review for Anjali Patel</div>
+                            <div style="color: #666; font-size: 0.8rem;">5 days ago</div>
+                        </div>
+                        <div style="padding: 12px 0;">
+                            <div style="font-weight: 500; color: #4A4A4A; font-size: 0.9rem;">Booked mehendi session</div>
+                            <div style="color: #666; font-size: 0.8rem;">1 week ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h2 class="card-title">Quick Actions</h2>
+                    </div>
+                    <div class="quick-actions">
+                        <button style="width: 100%; background: linear-gradient(135deg, #FF6B9D, #C589E8); color: white; border: none; padding: 15px; border-radius: 15px; font-weight: 600; cursor: pointer; margin-bottom: 10px;">
+                            <i class="fas fa-search"></i> Find New Tutors
+                        </button>
+                        <button style="width: 100%; background: #25D366; color: white; border: none; padding: 15px; border-radius: 15px; font-weight: 600; cursor: pointer; margin-bottom: 10px;">
+                            <i class="fas fa-user-plus"></i> Refer a Friend
+                        </button>
+                        <button style="width: 100%; background: #FFB347; color: white; border: none; padding: 15px; border-radius: 15px; font-weight: 600; cursor: pointer;">
+                            <i class="fas fa-cog"></i> Account Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 20px; max-width: 500px; width: 90%; max-height: 90%; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="color: #4A4A4A;">Give Feedback</h2>
+                <button onclick="closeModal('feedbackModal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">×</button>
+            </div>
+            
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label class="form-label">Overall Rating</label>
+                    <div class="rating-stars" style="display: flex; gap: 5px; margin-bottom: 10px;">
+                        <i class="fas fa-star star" data-rating="1" onclick="setRating(1)" style="color: #ddd; cursor: pointer; font-size: 1.5rem;"></i>
+                        <i class="fas fa-star star" data-rating="2" onclick="setRating(2)" style="color: #ddd; cursor: pointer; font-size: 1.5rem;"></i>
+                        <i class="fas fa-star star" data-rating="3" onclick="setRating(3)" style="color: #ddd; cursor: pointer; font-size: 1.5rem;"></i>
+                        <i class="fas fa-star star" data-rating="4" onclick="setRating(4)" style="color: #ddd; cursor: pointer; font-size: 1.5rem;"></i>
+                        <i class="fas fa-star star" data-rating="5" onclick="setRating(5)" style="color: #ddd; cursor: pointer; font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Your Review</label>
+                    <textarea class="form-textarea" placeholder="Share your experience with this tutor..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Would you recommend this tutor?</label>
+                    <div style="display: flex; gap: 15px;">
+                        <label><input type="radio" name="recommend" value="yes" required> Yes</label>
+                        <label><input type="radio" name="recommend" value="no" required> No</label>
+                    </div>
+                </div>
+                <button type="submit" class="form-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>SkillConnect</span>
+                </div>
+                <p>&copy; 2025 SkillConnect. Connecting communities through skills.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let selectedRating = 0;
+
+        function openFeedbackModal(tutorId) {
+            openModal('feedbackModal');
+        }
+
+        function setRating(rating) {
+            selectedRating = rating;
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.style.color = '#FFB347';
+                } else {
+                    star.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Handle feedback form submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (selectedRating === 0) {
+                alert('Please select a rating');
+                return;
+            }
+            
+            // Simulate feedback submission
+            setTimeout(() => {
+                closeModal('feedbackModal');
+                showNotification('Thank you for your feedback!', 'success');
+                this.reset();
+                selectedRating = 0;
+                // Reset stars
+                document.querySelectorAll('.star').forEach(star => {
+                    star.style.color = '#ddd';
+                });
+            }, 1000);
+        });
+    </script>
+
+    <style>
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .dashboard-card[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
+        }
+    </style>
+</body>
+</html>

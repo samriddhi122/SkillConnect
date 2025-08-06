@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillConnect - Learn Skills from Local Homemakers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>SkillConnect</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="#find-tutors" class="nav-link">Find Tutors</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login/Register</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Learn Amazing Skills from <span class="highlight">Local Homemakers</span></h1>
+      <p class="hero-subtitle">
+        Connect with talented homemakers in your community and learn cooking, baking, dance, mehendi, and more at affordable prices!
+      </p>
+
+      <!-- Search Bar -->
+      <div class="search-container" id="search-form">
+        <div class="search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <!-- add id -->
+          <input id="q" type="text" placeholder="Find tutors near you..." class="search-input">
+          <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+          <!-- add ids so JS can target them -->
+          <select id="skill" class="filter-select">
+            <option value="">All Skills</option>
+            <option value="cooking">Cooking</option>
+            <option value="baking">Baking</option>
+            <option value="dance">Dance</option>
+            <option value="mehendi">Mehendi</option>
+            <option value="soft-skills">Soft Skills</option>
+          </select>
+
+          <input id="location" type="text" placeholder="City/Pincode" class="filter-input">
+
+          <select id="priceRange" class="filter-select">
+          <option value="">Price Range</option>
+          <option value="0-500">₹0 - ₹500</option>
+          <option value="500-1000">₹500 - ₹1000</option>
+          <option value="1000-2000">₹1000 - ₹2000</option>
+          <option value="2000+">₹2000+</option>
+          </select>
+
+          <select id="rating" class="filter-select">
+            <option value="">All Ratings</option>
+            <option value="4+">4+ Stars</option>
+            <option value="3+">3+ Stars</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured Tutors Section -->
+<section class="featured-tutors" id="find-tutors">
+  <div class="container">
+    <h2 class="section-title">Featured Tutors</h2>
+
+    <!-- Loader, error, empty placeholders -->
+    <div id="loader" style="display:none">Loading...</div>
+    <div id="error" style="display:none; color: red;"></div>
+    <div id="empty" style="display:none">No tutors found.</div>
+
+    <!-- Tutors will be injected here -->
+    <div class="tutors-grid" id="tutors-container"></div>
+  </div>
+</section>
+
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Share Your Skills?</h2>
+                <p>Join our community of talented homemakers and start earning while teaching what you love!</p>
+                <a href="tutor-registration.html" class="cta-btn">Become a Tutor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>SkillConnect</span>
+                </div>
+                <p>&copy; 2025 SkillConnect. Connecting communities through skills.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
